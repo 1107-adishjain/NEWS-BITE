@@ -28,7 +28,7 @@ class NewsArt {
  // ignore: non_constant_identifier_names
  static NewsArt Fromapitoapp(Map<String, dynamic> article) {
     return NewsArt(
-        imgurl: article["urlToImage"] ??"https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/08/breaking-news-template-1-1661388694.jpg",
+        imgurl: article["urlToImage"] ??"assets/img/Screenshot 2024-06-08 214016.png",
         newshead: article["title"] ?? "Error Fail to Load Data:",
         data: article["description"] ?? "Error Fail to Load Data:",
         newsurl: article["url"] ??"https://news.google.com/home?hl=en-IN&gl=IN&ceid=IN:en",

@@ -28,18 +28,24 @@ class NewsContainer extends StatelessWidget {
         children: [
           // Image.network(
           //   imgurl,
-          //   height: 280,
-          //   width: MediaQuery.of(context).size.width,
+            // height: 280,
+            // width: MediaQuery.of(context).size.width,
           //   fit: BoxFit.cover,
           //   // color: Colors.blue,
           //   // width:   00
           // ),
 
-          CachedNetworkImage(
-              imageUrl: imgurl,
-              // placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
-            ),
+          // CachedNetworkImage(
+          //     imageUrl: imgurl,
+          //     // placeholder: (context, url) => const CircularProgressIndicator(),
+          //     errorWidget: (context, url, error) => const Icon(Icons.error),
+          //   ),
+            FadeInImage.assetNetwork(
+              height: 280,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+              placeholder:"assets/img/Screenshot 2024-06-08 214016.png", image:imgurl ),
+
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
@@ -67,7 +73,7 @@ class NewsContainer extends StatelessWidget {
                 Text(
                   newscnt!="Error Fail to Load Data:"?
                   newscnt.length>120 ?"${newscnt.substring(0,120)}...":  //learning of if else also given:
-                  "${newscnt.toString().substring(0, newscnt.length-15)}...":newscnt //this is used to only take the limited part of the news:
+                  "${newscnt.toString().substring(0, newscnt.length)}...":newscnt //this is used to only take the limited part of the news:
                   ,
                   style: const TextStyle(
                       fontSize: 18.0, fontWeight: FontWeight.w900),

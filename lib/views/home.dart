@@ -11,12 +11,15 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  bool isloading=true;
   NewsArt? newsart; // Making it nullable to handle the loading state
 
   // ignore: non_constant_identifier_names
 GetNews() async {
     newsart = await Fetchnews.fetchnews();
-    setState(() {});
+    setState(() {
+      isloading=false;
+    });
   }
 
 
@@ -41,6 +44,9 @@ GetNews() async {
               scrollDirection: Axis.vertical,
             
               onPageChanged: (value) {
+                setState(() {
+                  isloading=true;
+                });
                 GetNews();
               },
               itemBuilder: (context, index) {
