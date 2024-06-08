@@ -66,7 +66,7 @@ class NewsContainer extends StatelessWidget {
                 ),
                 Text(
                   newscnt!="Error Fail to Load Data:"?
-                  newscnt.length>100 ?newscnt.substring(0,100):  //learning of if else also given:
+                  newscnt.length>120 ?"${newscnt.substring(0,120)}...":  //learning of if else also given:
                   "${newscnt.toString().substring(0, newscnt.length-15)}...":newscnt //this is used to only take the limited part of the news:
                   ,
                   style: const TextStyle(
