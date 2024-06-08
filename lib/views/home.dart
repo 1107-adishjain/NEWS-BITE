@@ -14,10 +14,11 @@ class _HomescreenState extends State<Homescreen> {
   NewsArt? newsart; // Making it nullable to handle the loading state
 
   // ignore: non_constant_identifier_names
-  GetNews() async {
-    newsart = (await Fetchnews.fetchnews()) as NewsArt?;
+GetNews() async {
+    newsart = await Fetchnews.fetchnews();
     setState(() {});
   }
+
 
   @override
   void initState() {

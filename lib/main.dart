@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newsapp/views/home.dart';
-import 'package:newsapp/views/splash_loading.dart';
+// import 'package:newsapp/views/splash_loading.dart';
 void main()
 {
   runApp(const NewsApp());

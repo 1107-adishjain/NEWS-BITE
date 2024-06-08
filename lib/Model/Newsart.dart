@@ -2,7 +2,7 @@
 // this will act as data model:
 // idhar frontend ko jo chaiye bakcend se wo denge:
 // import 'package:newsapp/Model/Newsart.dart';
-import 'package:flutter/material.dart';
+
 class NewsArt {
   String imgurl;
   String newshead;

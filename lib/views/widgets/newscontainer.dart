@@ -37,7 +37,7 @@ class NewsContainer extends StatelessWidget {
 
           CachedNetworkImage(
               imageUrl: imgurl,
-              placeholder: (context, url) => const CircularProgressIndicator(),
+              // placeholder: (context, url) => const CircularProgressIndicator(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           Container(
