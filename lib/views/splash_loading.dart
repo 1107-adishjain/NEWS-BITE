@@ -53,7 +53,17 @@ class Loading_Page extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const Homescreen()));
               },
-              child: const Text("Proceed")),
+               style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8), // Adjust the radius as needed
+                ),
+                backgroundColor: Colors.white,
+              ),
+              child: const Text(
+                "Let's Go! ➡️ 🚀",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              )),
           const SizedBox(
             height: 60.0,
           ),
