@@ -6,6 +6,7 @@ import 'dart:convert';
 // import 'dart:io';
 import 'dart:math';
 import 'package:newsapp/Model/Newsart.dart';
+
 class Fetchnews {
   static List sourcesId = [
     "abc-news",
@@ -37,26 +38,24 @@ class Fetchnews {
     "usa-today",
   ];
   // now iss list  of sources me se random selection of source ke liye the code is:
-  
+
 // way to convert the data in json format to the map format such that it is clearly available
   static Future<NewsArt> fetchnews() async {
-    final RAndom=new Random();
-    var lists=sourcesId[RAndom.nextInt(sourcesId.length)];
+    final RAndom = new Random();
+    var lists = sourcesId[RAndom.nextInt(sourcesId.length)];
     // print(lists);
     Response response = await get(Uri.parse(
         "https://newsapi.org/v2/top-headlines?sources=$sourcesId&apiKey=cbdbe1a706b94211b75e5093c577a514"));
-        if(response.statusCode==200){
-    Map bodyData = jsonDecode(response.body);
-    List articles=bodyData["articles"];
-     final Newrandom=new Random();
-     var MyArticle=articles[Newrandom.nextInt(articles.length)];
-     print(MyArticle["urlToImage"]);
-     return NewsArt.Fromapitoapp(MyArticle);
-        }
-        else
-        {
-          throw Exception("Failed to Load News");
-        }
+    if (response.statusCode == 200) {
+      Map bodyData = jsonDecode(response.body);
+      List articles = bodyData["articles"];
+      final Newrandom = new Random();
+      var MyArticle = articles[Newrandom.nextInt(articles.length)];
+      print(MyArticle["urlToImage"]);
+      return NewsArt.Fromapitoapp(MyArticle);
+    } else {
+      throw Exception("Failed to Load News");
+    }
     // print(bodyData);
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:newsapp/views/home.dart';
 
 // ignore: camel_case_types
 class Loading_Page extends StatelessWidget {
@@ -15,46 +16,50 @@ class Loading_Page extends StatelessWidget {
               image:
                   AssetImage("assets/img/6f6c1538b050072b002dbc06bedaaf90.jpg"),
               fit: BoxFit.cover)),
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SpinKitRipple(
+          const SpinKitRipple(
             duration: Duration(seconds: 2),
             color: Colors.black,
             size: 150.0,
           ),
-          SizedBox(
+          const SizedBox(
             height: 12.0,
           ),
-          Text(
+          const Text(
             "NEWS BITE",
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12.0,
           ),
-          Text(
-            "Welcome to NEWS BITE! Stay updated with the latest news from around the world,\n delivered instantly. Enjoy a seamless experience with breaking news,\n in-depth articles, and personalized content tailored to your interests.\n Thank you for choosing NEWS BITE—your source for reliable and timely information.",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
+          // const Text(
+          //   "Welcome to NEWS BITE! Stay updated with the latest news from around the world,\n delivered instantly. Enjoy a seamless experience with breaking news,\n in-depth articles, and personalized content tailored to your interests.\n Thank you for choosing NEWS BITE—your source for reliable and timely information.",
+          //   textAlign: TextAlign.center,
+          //   style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
+          // ),
+          const SizedBox(
+            height: 36.0,
           ),
           // Spacer(),
-          
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "Created By Adish Jain",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.black),
-                ),
-              ],
-            ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Homescreen()));
+              },
+              child: const Text("Proceed")),
+          const SizedBox(
+            height: 60.0,
+          ),
+          const Text(
+            "Created By Adish Jain",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ],
       ),

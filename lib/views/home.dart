@@ -11,17 +11,16 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-  bool isloading=true;
+  bool isloading = true;
   NewsArt? newsart; // Making it nullable to handle the loading state
 
   // ignore: non_constant_identifier_names
-GetNews() async {
+  GetNews() async {
     newsart = await Fetchnews.fetchnews();
     setState(() {
-      isloading=false;
+      isloading = false;
     });
   }
-
 
   @override
   void initState() {
@@ -34,7 +33,10 @@ GetNews() async {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("NEWS BITE",style: TextStyle(color: Colors.white),),
+        title: Text(
+          "NEWS BITE",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.black,
         toolbarHeight: 34.0,
       ),
@@ -42,16 +44,16 @@ GetNews() async {
           ? Center(child: CircularProgressIndicator())
           : PageView.builder(
               scrollDirection: Axis.vertical,
-            
               onPageChanged: (value) {
                 setState(() {
-                  isloading=true;
+                  isloading = true;
                 });
                 GetNews();
               },
               itemBuilder: (context, index) {
                 return NewsContainer(
-                  imgurl: newsart!.imgurl, // Using the non-null assertion operator
+                  imgurl:
+                      newsart!.imgurl, // Using the non-null assertion operator
                   newshead: newsart!.newshead,
                   newscnt: newsart!.newscnt,
                   data: newsart!.data,

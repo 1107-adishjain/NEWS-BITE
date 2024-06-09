@@ -1,5 +1,3 @@
-
-
 // import 'package:flutter/material.dart';
 // import 'package:newsapp/views/home.dart';
 // import 'package:newsapp/views/splash_loading.dart';
@@ -40,7 +38,7 @@
 //       home: showingsplash?Loading_Page():Homescreen(), //yeh loading page ke pass jayega and then loading page route kara dega: homescreen me
 //       // theme: ThemeData(),
 //       title: 'News Bite',
-      
+
 //     );
 //   }
 // }
@@ -89,7 +87,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       // home: showingSplash ? const Loading_Page() : const Homescreen(),
-      home:const  Loading_Page(),
+      home: const Loading_Page(),
     );
   }
 }
