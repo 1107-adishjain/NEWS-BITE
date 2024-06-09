@@ -36,7 +36,7 @@ GetNews() async {
         centerTitle: true,
         title: Text("NEWS BITE",style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.black,
-        toolbarHeight: 25.0,
+        toolbarHeight: 34.0,
       ),
       body: newsart == null
           ? Center(child: CircularProgressIndicator())

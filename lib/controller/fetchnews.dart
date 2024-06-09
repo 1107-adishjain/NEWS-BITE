@@ -15,15 +15,15 @@ class Fetchnews {
     "engadget",
     "entertainment-weekly",
     "espn",
-    "espn-cric-info",
+    // "espn-cric-info",
     "financial-post",
     "fox-news",
     // "fox-sports",
     "globo",
-    "google-news",
+    // "google-news",
     "google-news-in",
     "medical-news-today",
-    "national-geographic",
+    // "national-geographic",
     "news24",
     "new-scientist",
     "new-york-magazine",
@@ -42,15 +42,21 @@ class Fetchnews {
   static Future<NewsArt> fetchnews() async {
     final RAndom=new Random();
     var lists=sourcesId[RAndom.nextInt(sourcesId.length)];
-    print(lists);
+    // print(lists);
     Response response = await get(Uri.parse(
         "https://newsapi.org/v2/top-headlines?sources=$sourcesId&apiKey=cbdbe1a706b94211b75e5093c577a514"));
+        if(response.statusCode==200){
     Map bodyData = jsonDecode(response.body);
     List articles=bodyData["articles"];
      final Newrandom=new Random();
      var MyArticle=articles[Newrandom.nextInt(articles.length)];
      print(MyArticle["urlToImage"]);
      return NewsArt.Fromapitoapp(MyArticle);
+        }
+        else
+        {
+          throw Exception("Failed to Load News");
+        }
     // print(bodyData);
   }
 }

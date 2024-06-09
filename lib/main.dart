@@ -84,11 +84,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'News Snack',
+      title: 'News Bite',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: showingSplash ? const Loading_Page() : const Homescreen(),
+      // home: showingSplash ? const Loading_Page() : const Homescreen(),
+      home:const  Loading_Page(),
     );
   }
 }

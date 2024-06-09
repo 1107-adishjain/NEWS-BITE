@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/views/detail_view.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+// import 'package:cached_network_image/cached_network_image.dart';
 // ignore: must_be_immutable
 class NewsContainer extends StatelessWidget {
   String imgurl;
@@ -41,7 +41,7 @@ class NewsContainer extends StatelessWidget {
           //     errorWidget: (context, url, error) => const Icon(Icons.error),
           //   ),
             FadeInImage.assetNetwork(
-              height: 280,
+              height: 330,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
               placeholder:"assets/img/Screenshot 2024-06-08 214016.png", image:imgurl ),
@@ -55,7 +55,7 @@ class NewsContainer extends StatelessWidget {
                   height: 12.0,
                 ),
                 Text(
-                  newshead.length>25? "${newshead.substring(0,25)}...":
+                  newshead.length>80? "${newshead.substring(0,80)}...":
                   newshead,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 20.0),
@@ -71,12 +71,12 @@ class NewsContainer extends StatelessWidget {
                   height: 12.0,
                 ),
                 Text(
-                  newscnt!="Error Fail to Load Data:"?
-                  newscnt.length>120 ?"${newscnt.substring(0,120)}...":  //learning of if else also given:
-                  "${newscnt.toString().substring(0, newscnt.length)}...":newscnt //this is used to only take the limited part of the news:
+                 
+                  newscnt.length>500 ?"${newscnt.substring(0,500)}...":  //learning of if else also given:
+                  "${newscnt.toString().substring(0, newscnt.length-14)}..." //this is used to only take the limited part of the news:
                   ,
                   style: const TextStyle(
-                      fontSize: 18.0, fontWeight: FontWeight.w900),
+                      fontSize: 15.0, fontWeight: FontWeight.w900),
                 ),
               ],
             ),
