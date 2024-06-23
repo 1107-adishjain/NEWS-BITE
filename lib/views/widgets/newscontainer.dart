@@ -76,7 +76,7 @@ class NewsContainer extends StatelessWidget {
                   // newscnt.length > 500
                   //     ? "${newscnt.substring(0, 500)}..."
                   //     : //learning of if else also given:
-                      "${newscnt.toString().substring(0, newscnt.length - 14)}..." //this is used to only take the limited part of the news:
+                      "${newscnt.toString().substring(0, newscnt.length - 9)}..." //this is used to only take the limited part of the news:
                   ,
                   style: const TextStyle(
                       fontSize: 15.0, fontWeight: FontWeight.w900),
